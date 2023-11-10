@@ -1,7 +1,7 @@
 # Personal git template / starter
 
 ## 🤖 Github (readme, actions...)
-- Edit **deployment file** located in `.github/workflows/deployment.yml`
+- Edit **deployment file** located in `.github/workflows/deployment.yml` and repository secrets !
 
 ## ✨ Commits
 - Move the file `commit-msg` to `.git/hooks/commit-msg` to have auto-prepended emojis in your commits.  
