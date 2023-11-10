@@ -11,6 +11,8 @@ replacements=(
     's/^fix/🐛 Fix:/'
     's/^doc/📚 Doc:/'
     's/^style/🎨 Style:/'
+    's/^compile/🎨 Style:/'
+    's/^recompile/🎨 Style:/'
     's/^refacto/🔨 Refacto:/'
     's/^update/🔨 Refacto:/'
     's/^perf/🚀 Perf:/'
@@ -22,6 +24,7 @@ replacements=(
     's/^first/🐣 First:/'
     's/^remove/❌ Delete:/'
     's/^delete/❌ Delete:/'
+    's/^move/🔁 Move:/'
 )
 
 # join replacements by ; to have sed perform multiple replace
