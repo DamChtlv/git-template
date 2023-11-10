@@ -1,4 +1,5 @@
 # Personal git template / starter
+> with **Github Actions** and **config setup** _(package manager, bundler...)_
 
 ## 1. Setup
 
