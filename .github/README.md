@@ -1,16 +1,16 @@
 # Personal git template / starter
 > with **Github Actions** and **config setup** _(package manager, bundler...)_
 
-## 1. Setup
+## 🛠 Setup
 
-### ✨ Commits
+### ✨ 1. Commits
 - To have auto-prepended emojis in your commits, run the following:
 _(ex: `fix ajax stuff` becomes `🐛 Fix: ajax stuff` automatically)_
 ```sh
 bunx husky install
 ```
 
-### 🤖 Github (readme, actions...)
+### 🤖 2. Github (readme, actions...)
 - Edit **deployment files paths** located in:
   - `.github/workflows/deploy-preprod.yml`
   - `.github/workflows/deploy-prod.yml`
@@ -26,7 +26,7 @@ bunx husky install
   PROD_FTP_PASS
   ```
 
-### 📖 Readme template
+### 📖 3. Readme template
 _Looks something like:_
 ![deploy-preprod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-preprod.yml/badge.svg?branch=release/preprod)
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
@@ -39,8 +39,9 @@ _Looks something like:_
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
 ```
 
-## 2. How to use
+## ❔ How to use
 Package manager / bundler / test runner used in this repo is **[bun](https://github.com/oven-sh/bun)**
+
 1. Install scripts
 ```sh
 bun i
