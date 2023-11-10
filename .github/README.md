@@ -1,8 +1,10 @@
 # Personal git template / starter
 
-## 🤖 Github (readme, actions...)
+## 1. Setup
+
+### 🤖 Github (readme, actions...)
 - Edit **deployment files paths** located in:
-  - `.github/workflows/deploy-preprod.yml` 
+  - `.github/workflows/deploy-preprod.yml`
   - `.github/workflows/deploy-prod.yml`
 
 - Set **repository secrets** below in repository settings:
@@ -10,19 +12,20 @@
   PREPROD_FTP_HOST
   PREPROD_FTP_USER
   PREPROD_FTP_PASS
+
   PROD_FTP_HOST
   PROD_FTP_USER
   PROD_FTP_PASS
   ```
 
-## ✨ Commits
-- Move the file `commit-msg` to `.git/hooks/commit-msg` to have auto-prepended emojis in your commits.  
+### ✨ Commits
+- Move the file `commit-msg` to `.git/hooks/commit-msg` to have auto-prepended emojis in your commits.
 _(ex: `fix ajax stuff` becomes `🐛 Fix: ajax stuff` automatically)_
 ```sh
 mv ./commit-msg ./.git/hooks/
 ```
 
-## 📖 Readme template
+### 📖 Readme template
 _Looks something like:_
 ![deploy-preprod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-preprod.yml/badge.svg?branch=release/preprod)
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
@@ -34,6 +37,15 @@ _Looks something like:_
 ![deploy-preprod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-preprod.yml/badge.svg?branch=release/preprod)
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
 ```
+
+## 2. Usage
+
+1. Install scripts
+```sh
+bun i
+```
+
+---
 
 ## 💡 Improvments / ideas
 - Force lint commits messages using [commitlint](https://github.com/conventional-changelog/commitlint#what-is-commitlint)?
