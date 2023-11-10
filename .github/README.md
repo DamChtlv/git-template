@@ -1,9 +1,8 @@
 # Personal git template / starter
 
 ## 🤖 Github (readme, actions...)
-- Edit **deployment files** located in `.github/workflows/deploy-preprod.yml` && `.github/workflows/deploy-prod.yml`
+- Edit **deployment files paths** located in `.github/workflows/deploy-preprod.yml` && `.github/workflows/deploy-prod.yml`
 - Edit **repository secrets**!
-- Edit status badges
 
 ## ✨ Commits
 - Move the file `commit-msg` to `.git/hooks/commit-msg` to have auto-prepended emojis in your commits.  
@@ -16,7 +15,7 @@ mv ./commit-msg ./.git/hooks/
 _Looks something like:_
 ![deploy-preprod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-preprod.yml/badge.svg?branch=release/preprod)
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
-- Copy code below into `.github/README.md`
+- Copy code below into `.github/README.md` and **change github paths**!
 ```md
 # Project
 
