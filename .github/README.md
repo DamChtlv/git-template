@@ -12,7 +12,7 @@ _(ex: `fix ajax stuff` becomes `🐛 Fix: ajax stuff` automatically)_
 mv ./commit-msg ./.git/hooks/
 ```
 
-## Readme template
+## 📖 Readme template
 _Looks something like:_
 ![deploy-preprod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-preprod.yml/badge.svg?branch=release/preprod)
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
