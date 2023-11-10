@@ -1,10 +1,10 @@
-name: 🚀 Deploy on FTP
+name: 🚀 Deploy preprod on FTP
 
 # Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for specific branches
   push:
-    branches: [ release/preprod, release/prod ]
+    branches: [ release/preprod ]
     paths-ignore:
       - 'docs/**'
       - '.github/**'
@@ -93,24 +93,3 @@ jobs:
         url: 'https://val.cht.lv/wp-json/damchtlv/v1/post-deploy' # update URL !!
         method: 'GET'
         timeout: 60000
-
-    # Doc: https://github.com/kevinpainchaud/simple-ftp-deploy-action
-    # - name: 📁 Sync files (prod)
-    #   if: github.ref == 'refs/heads/release/prod'
-    #   uses: damchtlv/simple-ftp-deploy-action@v1.0.0
-    #   with:
-    #     ftp_host: ${{ secrets.PROD_FTP_HOST }}
-    #     ftp_username: ${{ secrets.PROD_FTP_USER }}
-    #     ftp_password: ${{ secrets.PROD_FTP_PASS }}
-    #     local_source_dir: "wp-content/themes/val"
-    #     dist_target_dir: "val.cht.lv/wp-content/themes"
-    #     exclude: "'^logs/' '^README.md' '^.git/' '^.github/' '^node_modules/'"
-    #     other_flags: "--only-newer --ignore-time"
-
-    # - name: 🧹 Compile PIP + Clear WPRocket & CF cache (prod)
-    #   if: github.ref == 'refs/heads/release/prod'
-    #   uses: fjogeleit/http-request-action@v1.14.1
-    #   with:
-    #     url: 'https://val.cht.lv/wp-json/damchtlv/v1/post-deploy' # update URL !!
-    #     method: 'GET'
-    #     timeout: 60000
