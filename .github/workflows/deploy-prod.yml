@@ -1,0 +1,93 @@
+name: 🚀 Deploy prod on FTP
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for specific branches
+  push:
+    branches: [ release/prod ]
+    paths-ignore:
+      - 'docs/**'
+      - '.github/**'
+      - 'README.m**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Prevent multiple executions of same workflow
+concurrency:
+  group: '${{ github.workflow }} @ ${{ github.event.pull_request.head.label || github.head_ref || github.ref }}'
+  cancel-in-progress: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: 🚚 Get latest repo update
+      uses: actions/checkout@v4
+
+    - name: 🚀 Use Bun
+      uses: oven-sh/setup-bun@v1
+      with:
+        bun-version: latest
+    
+    # - name: ⚙ Use Node.js v16
+    #   uses: actions/setup-node@v3
+    #   with:
+    #     node-version: 16
+        
+    # - name: 📦 Cache node modules
+    #   uses: actions/cache@v3
+    #   with:
+    #     path: wp-content/themes/val/node_modules
+    #     key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-node-
+          
+    # - name: 📦 Cache vendor
+    #   uses: actions/cache@v3
+    #   with:
+    #     path: wp-content/themes/val/vendor
+    #     key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-composer-
+
+    # - name: ⬇ Install dependencies (bun)
+    #   run: |
+    #     cd ./wp-content/themes/val
+    #     bun i
+    #     # php8.1 $(which composer) install
+          
+    # - name: ⬇ Install dependencies
+    #   run: |
+    #     cd ./wp-content/themes/val
+    #     npm i
+    #     # php8.1 $(which composer) install
+
+    # - name: 🔨 Build (bun)
+    #   run: |
+    #     cd ./wp-content/themes/val && bun run production
+
+    # - name: 🔨 Build
+    #   run: |
+    #     cd ./wp-content/themes/val && npm run production
+    
+    # Doc: https://github.com/kevinpainchaud/simple-ftp-deploy-action
+    - name: 📁 Sync files (prod)
+      uses: damchtlv/simple-ftp-deploy-action@v1.0.0
+      with:
+        ftp_host: ${{ secrets.PROD_FTP_HOST }}
+        ftp_username: ${{ secrets.PROD_FTP_USER }}
+        ftp_password: ${{ secrets.PROD_FTP_PASS }}
+        local_source_dir: "wp-content/themes/val" # update theme path !!
+        dist_target_dir: "val.cht.lv/wp-content/themes/val" # update theme path !!
+        exclude: "'^logs/' '^README.md' '^.git/' '^.github/' '^node_modules/'"
+        other_flags: "--only-newer --ignore-time"
+
+    - name: 🧹 Compile PIP + Clear WPRocket & CF cache (prod)
+      uses: fjogeleit/http-request-action@v1.14.1
+      with:
+        url: 'https://val.cht.lv/wp-json/damchtlv/v1/post-deploy' # update URL !!
+        method: 'GET'
+        timeout: 60000
