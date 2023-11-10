@@ -16,7 +16,7 @@ mv ./commit-msg ./.git/hooks/
 _Looks something like:_
 ![deploy-preprod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-preprod.yml/badge.svg?branch=release/preprod)
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
-
+- Copy code below into `.github/README.md`
 ```md
 # Project
 
