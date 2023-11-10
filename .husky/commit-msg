@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# the file where the commit message is written
+filepath="$1"
+tmp_file=$(mktemp /tmp/emoji-commitzen.XXXX)
+
+replacements=(
+    's/^new/✨ Feat:/'
+    's/^add/✨ Feat:/'
+    's/^feat/✨ Feat:/'
+    's/^fix/🐛 Fix:/'
+    's/^doc/📚 Doc:/'
+    's/^style/🎨 Style:/'
+    's/^refacto/🔨 Refacto:/'
+    's/^update/🔨 Refacto:/'
+    's/^perf/🚀 Perf:/'
+    's/^chore/🔧 Chore:/'
+    's/^config/🔧 Config:/'
+    's/^lint/💄 Lint:/'
+    's/^test/🤖 Test:/'
+    's/^release/📦 Release:/'
+    's/^first/🐣 First:/'
+    's/^remove/❌ Delete:/'
+    's/^delete/❌ Delete:/'
+)
+
+# join replacements by ; to have sed perform multiple replace
+sed_command=$(printf "%s;" "${replacements[@]}")
+
+# perform replacements in temp file
+cat $filepath | sed "$sed_command" > $tmp_file
+
+# replace commit file
+mv $tmp_file $filepath
