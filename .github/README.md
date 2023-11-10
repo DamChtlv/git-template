@@ -3,6 +3,8 @@
 
 ## 🛠 Setup
 
+> 🛑 Must install **[Bun](https://bun.sh/)** first, using this command: `curl -fsSL https://bun.sh/install | bash`
+
 ### ✨ 1. Commits
 - To have auto-prepended emojis in your commits, run the following:  
 _(ex: `fix ajax stuff` becomes `🐛 Fix: ajax stuff` automatically)_
