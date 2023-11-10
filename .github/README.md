@@ -2,6 +2,13 @@
 
 ## 1. Setup
 
+### ✨ Commits
+- To have auto-prepended emojis in your commits, run the following:
+_(ex: `fix ajax stuff` becomes `🐛 Fix: ajax stuff` automatically)_
+```sh
+bunx husky install
+```
+
 ### 🤖 Github (readme, actions...)
 - Edit **deployment files paths** located in:
   - `.github/workflows/deploy-preprod.yml`
@@ -18,13 +25,6 @@
   PROD_FTP_PASS
   ```
 
-### ✨ Commits
-- Move the file `commit-msg` to `.git/hooks/commit-msg` to have auto-prepended emojis in your commits.
-_(ex: `fix ajax stuff` becomes `🐛 Fix: ajax stuff` automatically)_
-```sh
-mv ./commit-msg ./.git/hooks/
-```
-
 ### 📖 Readme template
 _Looks something like:_
 ![deploy-preprod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-preprod.yml/badge.svg?branch=release/preprod)
@@ -38,13 +38,32 @@ _Looks something like:_
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
 ```
 
-## 2. Usage
-
+## 2. How to use
+Package manager / bundler / test runner used in this repo is **[bun](https://github.com/oven-sh/bun)**
 1. Install scripts
 ```sh
 bun i
 ```
 
+2. Run scripts _(from `package.json`)_
+```sh
+bun run script-name
+```
+
+3. Execute package
+```sh
+bunx module-name
+```
+
+4. Build assets
+```sh
+bun build ./index.js --outdir ./build
+```
+
+5. Run tests
+```sh
+bun test
+```
 ---
 
 ## 💡 Improvments / ideas
