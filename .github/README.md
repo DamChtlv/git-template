@@ -1,8 +1,19 @@
 # Personal git template / starter
 
 ## 🤖 Github (readme, actions...)
-- Edit **deployment files paths** located in `.github/workflows/deploy-preprod.yml` && `.github/workflows/deploy-prod.yml`
-- Edit **repository secrets**!
+- Edit **deployment files paths** located in:
+  - `.github/workflows/deploy-preprod.yml` 
+  - `.github/workflows/deploy-prod.yml`
+
+- Set **repository secrets** below in repository settings:
+  ```sh
+  PREPROD_FTP_HOST
+  PREPROD_FTP_USER
+  PREPROD_FTP_PASS
+  PROD_FTP_HOST
+  PROD_FTP_USER
+  PROD_FTP_PASS
+  ```
 
 ## ✨ Commits
 - Move the file `commit-msg` to `.git/hooks/commit-msg` to have auto-prepended emojis in your commits.  
@@ -15,7 +26,7 @@ mv ./commit-msg ./.git/hooks/
 _Looks something like:_
 ![deploy-preprod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-preprod.yml/badge.svg?branch=release/preprod)
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
-- Copy code below into `.github/README.md` and **change github paths**!
+- Copy code below into `.github/README.md` and **change repository paths**!
 ```md
 # Project
 
@@ -24,5 +35,5 @@ _Looks something like:_
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
 ```
 
-## 💡 Improvments
+## 💡 Improvments / ideas
 - Force lint commits messages using [commitlint](https://github.com/conventional-changelog/commitlint#what-is-commitlint)?
