@@ -1,3 +1,9 @@
+node_modules
+backup*
+package-lock.json
+yarn.lock
+bun.lockb
+
 # Wordpress - ignore core, configuration, examples, uploads and logs.
 # https://github.com/github/gitignore/blob/main/WordPress.gitignore
 
@@ -6,8 +12,12 @@
 # Note: if you want to stage/commit WP core files
 # you can delete this whole section/until Configuration.
 /wp-admin/
+/wp-content/debug.log
 /wp-content/index.php
+/wp-content/cache
 /wp-content/languages
+/wp-content/upgrade
+/wp-content/uploads
 /wp-content/plugins/index.php
 /wp-content/themes/index.php
 /wp-includes/
@@ -26,23 +36,14 @@ wp-config.php
 # Example plugin
 /wp-content/plugins/hello.php
 
-# Uploads
-/wp-content/uploads/
-
 # Log files
 *.log
 
+# Third party
+/wp-content/advanced-cache.php
+/wp-content/upgrade-temp-backup
+/wp-content/wp-rocket-config
+/wp-content/wflogs
+
 # htaccess
-/.htaccess
-
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
-
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
+# /.htaccess
