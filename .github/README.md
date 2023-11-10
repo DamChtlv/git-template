@@ -60,7 +60,12 @@ bunx module-name
 bun build ./index.js --outdir ./build
 ```
 
-5. Run tests
+5. Spin up a static server on `localhost:5000`
+```sh
+bunx serve folder-name
+```
+
+6. Run tests
 ```sh
 bun test
 ```
