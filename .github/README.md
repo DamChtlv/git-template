@@ -4,7 +4,7 @@
 ## 🛠 Setup
 
 ### ✨ 1. Commits
-- To have auto-prepended emojis in your commits, run the following:
+- To have auto-prepended emojis in your commits, run the following:  
 _(ex: `fix ajax stuff` becomes `🐛 Fix: ajax stuff` automatically)_
 ```sh
 bunx husky install
