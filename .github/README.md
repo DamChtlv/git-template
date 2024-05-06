@@ -77,3 +77,4 @@ bun test
 
 ## 💡 Improvments / ideas
 - Force lint commits messages using [commitlint](https://github.com/conventional-changelog/commitlint#what-is-commitlint)?
+- Automatically generate a changelog based on commits using [Git Cliff](https://github.com/orhun/git-cliff)?
