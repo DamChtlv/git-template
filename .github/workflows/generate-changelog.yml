@@ -1,9 +1,9 @@
-- name: ✍ git-cliff - Changelog Generator
-uses: orhun/git-cliff-action@v3
-# You may pin to the exact commit or the version.
-# uses: orhun/git-cliff-action@8b17108aad4d9362649a5dae020746c2a767c90d
-# with:
-  # config file location
-  # config: # optional, default is cliff.toml
-  # git-cliff arguments
-  # args: # optional, default is -v
+name: ✍ git-cliff - Changelog Generator
+  uses: orhun/git-cliff-action@v3
+  # You may pin to the exact commit or the version.
+  # uses: orhun/git-cliff-action@8b17108aad4d9362649a5dae020746c2a767c90d
+  # with:
+    # config file location
+    # config: # optional, default is cliff.toml
+    # git-cliff arguments
+    # args: # optional, default is -v
