@@ -48,7 +48,7 @@ jobs:
     # - name: 📦 Cache vendor
     #   uses: actions/cache@v3
     #   with:
-    #     path: wp-content/themes/val/vendor
+    #     path: wp-content/themes/%%THEME_FOLDER%%/vendor
     #     key: ${{ runner.os }}-composer-${{ hashFiles('composer.lock') }}
     #     restore-keys: |
     #       ${{ runner.os }}-composer-
@@ -67,11 +67,11 @@ jobs:
 
     # - name: 🔨 Build (bun)
     #   run: |
-    #     cd ./wp-content/themes/val && bun run production
+    #     cd ./wp-content/themes/%%THEME_FOLDER%% && bun run production
 
     # - name: 🔨 Build
     #   run: |
-    #     cd ./wp-content/themes/val && npm run production
+    #     cd ./wp-content/themes/%%THEME_FOLDER%% && npm run production
     
     # Doc: https://github.com/kevinpainchaud/simple-ftp-deploy-action
     - name: 📁 Sync files (prod)
@@ -80,14 +80,14 @@ jobs:
         ftp_host: ${{ secrets.PROD_FTP_HOST }}
         ftp_username: ${{ secrets.PROD_FTP_USER }}
         ftp_password: ${{ secrets.PROD_FTP_PASS }}
-        local_source_dir: "wp-content/themes/val" # update theme path !!
-        dist_target_dir: "val.cht.lv/wp-content/themes/val" # update theme path !!
+        local_source_dir: "wp-content/themes/%%THEME_FOLDER%%" # TODO: update theme path !!
+        dist_target_dir: "%%SITE_URL%%/wp-content/themes/%%THEME_FOLDER%%" # TODO: update theme path !!
         exclude: "'^logs/' '^README.md' '^.git/' '^.github/' '^node_modules/'"
         other_flags: "--only-newer --ignore-time"
 
     - name: 🧹 Compile PIP + Clear WPRocket & CF cache (prod)
       uses: fjogeleit/http-request-action@v1.14.1
       with:
-        url: 'https://val.cht.lv/wp-json/damchtlv/v1/post-deploy' # update URL !!
+        url: 'https://%%SITE_URL%%/wp-json/damchtlv/v1/post-deploy' # TODO: update URL !!
         method: 'GET'
         timeout: 60000
