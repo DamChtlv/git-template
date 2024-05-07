@@ -16,20 +16,21 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
     run-changelog-generator:
+      name: Run Changelog Generator (git-cliff)
       runs-on: ubuntu-latest
+      outputs:
+        release_body: ${{ steps.git-cliff.outputs.content }}
       steps:
         - name: Check out repository
           uses: actions/checkout@v4
           with:
             fetch-depth: 0
       
-        - name: Install git-cliff
-          uses: taiki-e/install-action@git-cliff
-        
         - name: Generate changelog
-          run: git-cliff
-          # with:
-          #   config file location
-          #   config: # optional, default is cliff.toml
-          #   git-cliff arguments
-          #   args: # optional, default is -v
+          uses: orhun/git-cliff-action@v3
+          id: git-cliff
+          with:
+            # config file location
+            config: cliff.toml
+            # git-cliff arguments - https://git-cliff.org/docs/usage/args
+            args: --bump -v # optional, default is -v
