@@ -11,11 +11,16 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+# Allow action to write on repo
+# https://stackoverflow.com/questions/73687176/permission-denied-to-github-actionsbot-the-requested-url-returned-error-403
+permissions:
+  contents: write
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
 
     # https://github.com/orhun/git-cliff/blob/main/website/docs/github-actions/git-cliff-action.md
-    run-changelog-generator:
+    changelog:
       name: Run Changelog Generator (git-cliff)
       runs-on: ubuntu-latest
       steps:
@@ -43,5 +48,5 @@ jobs:
             git config user.email 'github-actions[bot]@users.noreply.github.com'
             set +e
             git add CHANGELOG.md
-            git commit -m "🤖 Regenerate changelog"
+            git commit -m "🤖 Auto regenerate changelog (git-cliff action)"
             git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
