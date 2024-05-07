@@ -1,4 +1,4 @@
-name: ✍ git-cliff - Changelog Generator
+name: ✍ Generate Changelog / Release notes (git-cliff)
 
 # Controls when the action will run.
 on:
@@ -15,14 +15,21 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  run-changelog-generator:
-    runs-on: ubuntu-latest
-    steps:
-      # You may pin to the exact commit or the version.
-      # uses: orhun/git-cliff-action@8b17108aad4d9362649a5dae020746c2a767c90d
-      - uses: orhun/git-cliff-action@v3
-      # with:
-      #   config file location
-      #   config: # optional, default is cliff.toml
-      #   git-cliff arguments
-      #   args: # optional, default is -v
+    run-changelog-generator:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out repository
+          uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
+      
+        - name: Install git-cliff
+          uses: taiki-e/install-action@git-cliff
+        
+        - name: Generate changelog
+          run: git-cliff
+          # with:
+          #   config file location
+          #   config: # optional, default is cliff.toml
+          #   git-cliff arguments
+          #   args: # optional, default is -v
