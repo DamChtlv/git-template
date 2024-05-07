@@ -58,11 +58,12 @@ commit_preprocessors = [
 commit_parsers = [
   { message = "^feat", group = "<!-- 0 -->🚀 Features" },
   { message = "^fix", group = "<!-- 1 -->🐛 Bugs fixed" },
+  { message = "^ticket", group = "<!-- 2 -->🚜 Ticket" },
+  { message = "^(update|refact|maj)\([A-Za-z0-9_-]+?\))+(:\ .*)$", group = "<!-- 6 -->🔨 Refactor / Update" },
   { message = "^docs", group = "<!-- 3 -->📚 Documentation" },
   { message = "^init", group = "<!-- 4 -->💡 Initialisation" },
-  { message = "^ticket", group = "<!-- 2 -->🚜 Ticket" },
   { message = "^style", group = "<!-- 5 -->🎨 Style" },
-  { message = "^test", group = "<!-- 6 -->🧪 Testing" },
+  { message = "^test", group = "<!-- 7 -->🧪 Testing" },
 ]
 # protect breaking changes from being skipped due to matching a skipping commit_parser
 protect_breaking_commits = false
