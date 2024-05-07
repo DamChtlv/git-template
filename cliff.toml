@@ -59,7 +59,7 @@ commit_parsers = [
   { message = "^feat", group = "<!-- 0 -->🚀 Features" },
   { message = "^fix", group = "<!-- 1 -->🐛 Bugs fixed" },
   { message = "^ticket", group = "<!-- 2 -->🚜 Ticket" },
-  { message = "^(update|refact|maj)\([A-Za-z0-9_-]+?\))+(:\ .*)$", group = "<!-- 6 -->🔨 Refactor / Update" },
+  { message = "^(update|refact|maj)$", group = "<!-- 6 -->🔨 Refactor / Update" },
   { message = "^docs", group = "<!-- 3 -->📚 Documentation" },
   { message = "^init", group = "<!-- 4 -->💡 Initialisation" },
   { message = "^style", group = "<!-- 5 -->🎨 Style" },
