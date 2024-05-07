@@ -20,11 +20,10 @@ body = """
     ## [unreleased]
 {% endif %}\
 {% for group, commits in commits | group_by(attribute="group") %}
-    ### {{ group | striptags | trim | upper_first }}
     {% for commit in commits %}
         - {% if commit.scope %}*({{ commit.scope }})* {% endif %}\
             {% if commit.breaking %}[**⚠️ CHANGE**] {% endif %}\
-            {{ commit.message | upper_first }}\
+            {{ commit.message | upper_first }} ([{{ commit.id | truncate(length=7, end="") }}]({{ commit.id }}))\
     {% endfor %}
 {% endfor %}\n
 """
@@ -60,7 +59,7 @@ commit_parsers = [
   { message = "^fix", group = "<!-- 1 -->🐛 Bugs fixed" },
   { message = "^ticket", group = "<!-- 2 -->🚜 Ticket" },
   { message = "^update|^refact|^maj", group = "<!-- 6 -->🔨 Update" },
-  { message = "^docs", group = "<!-- 3 -->📚 Documentation" },
+  { message = "^doc", group = "<!-- 3 -->📚 Documentation" },
   { message = "^init", group = "<!-- 4 -->💡 Initialisation" },
   { message = "^style", group = "<!-- 5 -->🎨 Style" },
   { message = "^test", group = "<!-- 7 -->🧪 Testing" },
