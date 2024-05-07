@@ -6,7 +6,7 @@ on:
   push:
     branches: [ main ]
     paths-ignore:
-      - 'CHANGELOG.m**'
+      - 'CHANGELOG.m**' # To prevent infinite trigger
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -19,13 +19,13 @@ jobs:
       name: Run Changelog Generator (git-cliff)
       runs-on: ubuntu-latest
       steps:
-        - name: Check out repository
+        - name: 🚚 Get latest repo update
           uses: actions/checkout@v4
           with:
             fetch-depth: 0
 
         # https://github.com/orhun/git-cliff-action/tree/main#usage
-        - name: Generate changelog
+        - name: ✍ Generate changelog
           uses: orhun/git-cliff-action@v3
           with:
             # config file location
@@ -37,11 +37,11 @@ jobs:
             GITHUB_REPO: ${{ github.repository }}
 
         # https://github.com/orhun/git-cliff-action/tree/main#committing-the-changelog
-        - name: Commit generated changelog
+        - name: 🚀 Commit generated changelog
           run: |
             git config user.name 'github-actions[bot]'
             git config user.email 'github-actions[bot]@users.noreply.github.com'
             set +e
             git add CHANGELOG.md
             git commit -m "🤖 Regenerate changelog"
-            git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git <main>
+            git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git main
