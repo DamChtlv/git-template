@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.0] - 2024-05-15
+## [0.1.0] - 2024-06-03
 
 ### <!-- 0 -->🚀 Features
 
@@ -27,6 +27,7 @@ All notable changes to this project will be documented in this file.
 ### <!-- 8 -->⚙️ Miscellaneous Tasks (CI...)
 
 - *(cliff)* Fix branch name (changelog will be in "main" branch) ([db98583](db985832a45896afedee750cc824f14d4d9d9bb2))
+- *(cliff)* Add more detected words (mostly caps versions) ([f41375f](f41375fa187b06d38d89cd4da7a4dbea8188ed46))
 
 ### <!-- 9 -->◀️ Revert
 
