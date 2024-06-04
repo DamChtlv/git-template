@@ -11,6 +11,8 @@ replacements=(
     's/^Add/✨ Feat: add/'
     's/^feat/✨ Feat:/'
     's/^Feat/✨ Feat:/'
+    's/^fonc/✨ Feat:/'
+    's/^Fonc/✨ Feat:/'
     's/^fix/🐛 Fix:/'
     's/^Fix/🐛 Fix:/'
     's/^doc/📚 Doc:/'
@@ -27,16 +29,18 @@ replacements=(
     's/^Refacto/🔨 Refact:/'
     's/^update/🔨 Refact:/'
     's/^Update/🔨 Refact:/'
+    's/^move/🔨 Refact:/'
+    's/^Move/🔨 Refact:/'
     's/^perf/🚀 Perf:/'
     's/^Perf/🚀 Perf:/'
     's/^chore/🔧 Chore:/'
     's/^Chore/🔧 Chore:/'
-    's/^config/🔧 Conf:/'
-    's/^Config/🔧 Conf:/'
+    's/^config/🤖 CI:/'
+    's/^Config/🤖 CI:/'
     's/^lint/💄 Lint:/'
     's/^Lint/💄 Lint:/'
-    's/^test/🤖 Test:/'
-    's/^Test/🤖 Test:/'
+    's/^test/🧪 Test:/'
+    's/^Test/🧪 Test:/'
     's/^release/📦 Release:/'
     's/^Release/📦 Release:/'
     's/^first/🐣 First:/'
@@ -45,15 +49,26 @@ replacements=(
     's/^Remove/❌ Del:/'
     's/^delete/❌ Del:/'
     's/^Delete/❌ Del:/'
-    's/^move/🔁 Move:/'
-    's/^Move/🔁 Move:/'
+    's/^revert/🔁 Revert:/'
+    's/^Revert/🔁 Revert:/'
 )
 
 # join replacements by ; to have sed perform multiple replace
 sed_command=$(printf "%s;" "${replacements[@]}")
 
 # perform replacements in temp file
-cat $filepath | sed "$sed_command" > $tmp_file
+result=$(cat $filepath | sed "$sed_command")
+
+# if there are brackets in the commit message, remove the colon
+brackets_regex="\(([^()]*)\)"
+for s in ${result[@]}; do
+    if [[ ${s} =~ $brackets_regex ]]; then
+        result=$(echo "$result" | sed "s/:(/(/")
+    fi
+done
+
+# write result to temp file
+echo $result > $tmp_file
 
 # replace commit file
 mv $tmp_file $filepath
