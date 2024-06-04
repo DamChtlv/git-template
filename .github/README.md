@@ -1,36 +1,65 @@
 # Personal git template / starter
-> with **Github Actions** and **config setup** _(package manager, bundler...)_
 
-## 🛠 Setup
+> 🛠 Tools used:
+> - 🤖 CI/CD manager: **[Github actions](https://github.com/DamChtlv/git-template/tree/main/.github/workflows)**
+> - 📦 Package manager, 🧪 test runner, 🖥 live server, ⚙ bundler & 🔨 compiler: **[bun](https://github.com/oven-sh/bun)**
+> - 📚 Changelog generator: [**cliff**](https://git-cliff.org/)
+> - ⌨ Commit convention / formatter: [**conventional commits**](https://www.conventionalcommits.org/en/v1.0.0/#summary) / **[husky](https://typicode.github.io/husky/)**
 
-> 🛑 Must install **[Bun](https://bun.sh/)** first, using this command: `curl -fsSL https://bun.sh/install | bash`
+## ✨ Features
+### ⌨ Auto formatted commits & auto-changelog
+- This repo uses **a simple commit convention**, which gets **automatically formatted** properly and also used to **generate a changelog**  
+> 💡 INFO: Commit message should be composed like this: `action|context|details`
+>
+> Example: commit `fix ajax used wrong ajax url` will become `🐛 Fix(ajax): used wrong ajax url`,  
+> it will also be added into 🐛 **Bug fixes section** inside latest version of changelog automatically _(see `CHANGELOG.md`)_
 
-### ✨ 1. Commits
-- To have auto-prepended emojis in your commits, run the following:  
-_(ex: `fix ajax stuff` becomes `🐛 Fix: ajax stuff` automatically)_
+### 🚀 Auto install / build & auto deploy / CICD 
+- **Install assets** from managers 
+> _node modules..._
+- **Automatically push code** on remote servers 
+> _using correct SFTP env based on pull requests / branches_
+- **Automatically trigger 3rd party actions** post deploy 
+> _auto clear cache using cache plugin..._
+
+### 🔍 Project quick view (badges)
+- See **deploy states** per **environment** _(failed, success...)_
+
+## 🛠 How to install and setup?
+0. Clone this repository using `https|ssh|zip`
+
+1. Install **package manager**:
+> _(mandatory if `bun` is already installed)_ 
+```sh
+curl -fsSL https://bun.sh/install | bash
+```
+
+2. Install **git hooks manager**:
+> _(mandatory if `package.json` already has `prepare` script)_ 
 ```sh
 bunx husky install
 ```
 
-### 🤖 2. Github (readme, actions...)
+3. Update **continuous integration config files:**
+> _(Github readme, actions...)_
 - Edit **deployment files paths** located in:
   - `.github/workflows/deploy-preprod.yml`
   - `.github/workflows/deploy-prod.yml`
 
 - Set **repository secrets** below in repository settings:
   ```sh
-  PREPROD_FTP_HOST
-  PREPROD_FTP_USER
-  PREPROD_FTP_PASS
+  PREPROD_FTP_HOST = (example.com)
+  PREPROD_FTP_USER = (johndoe)
+  PREPROD_FTP_PASS = (not123)
 
-  PROD_FTP_HOST
-  PROD_FTP_USER
-  PROD_FTP_PASS
+  PROD_FTP_HOST = (example.com)
+  PROD_FTP_USER = (johndoe)
+  PROD_FTP_PASS = (not123)
   ```
 
-### 📖 3. Readme template
-_Looks something like:_
-![deploy-preprod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-preprod.yml/badge.svg?branch=release/preprod)
+4. Update **badges** in **README.md**  
+_Example:_  
+![deploy-preprod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-preprod.yml/badge.svg?branch=release/preprod)  
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
 - Copy code below into `.github/README.md` and **change repository paths**!
 ```md
@@ -41,8 +70,8 @@ _Looks something like:_
 ![deploy-prod](https://github.com/DamChtlv/git-template/actions/workflows/deploy-prod.yml/badge.svg?branch=release/prod)
 ```
 
-## ❔ How to use
-Package manager / bundler / test runner used in this repo is **[bun](https://github.com/oven-sh/bun)**
+
+## ❔ How do you use it?
 
 1. Install scripts
 ```sh
@@ -61,7 +90,7 @@ bunx module-name
 
 4. Build assets
 ```sh
-bun build ./index.js --outdir ./build
+bun run build ./index.js --outdir ./build
 ```
 
 5. Spin up a static server on `localhost:5000`
@@ -76,5 +105,5 @@ bun test
 ---
 
 ## 💡 Improvments / ideas
-- Force lint commits messages using [commitlint](https://github.com/conventional-changelog/commitlint#what-is-commitlint)?
-- Automatically generate a changelog based on commits using [Git Cliff](https://github.com/orhun/git-cliff)?
+- ~~Force lint commits messages using [commitlint](https://github.com/conventional-changelog/commitlint#what-is-commitlint)?~~
+- ~~Automatically generate a changelog based on commits using [Git Cliff](https://github.com/orhun/git-cliff)?~~
