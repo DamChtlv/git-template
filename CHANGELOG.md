@@ -13,6 +13,10 @@ All notable changes to this project will be documented in this file.
 - *(cliff)* Update commit parser syntax ([0de21f3](0de21f3e3a0b43f46cc90c9f1f45734136ea45e8))
 - *(cliff)* Attempt to fix changelog.md file generation ([8be5084](8be5084af4301a887989a89ceedcd619a8829b4b))
 
+### <!-- 3 -->📚 Documentation
+
+- *(readme)* Update libs + explanations ([1c089c3](1c089c3d5b5fcfae033a0e1837e0bc8e1e7a1e0d))
+
 ### <!-- 6 -->🔨 Update
 
 - *(cliff)* Auto-commit generated changelog ([fca58cc](fca58cc7e1ff7f4a07a8e1c40cbda1faae7b200c))
