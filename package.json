@@ -1,6 +1,6 @@
 {
   "name": "new-project",
-  "description": "WP starter theme which uses FSE, docker, bun, tailwindcss, vite, and more",
+  "description": "Personal git template",
   "version": "1.0.0",
   "author": {
     "name": "DamChtlv",
