@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 - *(cliff)* Update commit parser syntax ([0de21f3](0de21f3e3a0b43f46cc90c9f1f45734136ea45e8))
 - *(cliff)* Attempt to fix changelog.md file generation ([8be5084](8be5084af4301a887989a89ceedcd619a8829b4b))
 - *(readme)* Add missing closing tag ([6898f4d](6898f4d9b9339276a38a0e63fd04d0559f2e910a))
+- *(cliff)* Looks for commits with emoji too now ([4153d8a](4153d8acf4399b47f61354116cfa5964c1f0b991))
 
 ### <!-- 3 -->📚 Documentation
 
