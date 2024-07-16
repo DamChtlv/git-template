@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.0] - 2024-07-05
+## [0.1.0] - 2024-07-16
 
 ### <!-- 0 -->🚀 Features
 
@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file.
 ### <!-- 6 -->🔨 Update
 
 - *(cliff)* Auto-commit generated changelog ([fca58cc](fca58cc7e1ff7f4a07a8e1c40cbda1faae7b200c))
+- *(readme)* Add details summary + rewrite titles ([b7717c0](b7717c0612373641d64a8060da745e184947a28f))
 
 ### <!-- 7 -->🧪 Testing
 
