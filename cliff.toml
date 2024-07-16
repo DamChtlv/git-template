@@ -56,16 +56,16 @@ commit_preprocessors = [
 ]
 # regex for parsing and grouping commits
 commit_parsers = [
-  { message = "^feat|^Feat", group = "<!-- 0 -->🚀 Features" },
-  { message = "^fix|^Fix", group = "<!-- 1 -->🐛 Bugs fixed" },
-  { message = "^ticket|^Ticket|^client|^Client", group = "<!-- 2 -->🚜 Ticket" },
-  { message = "^update|^refact|^maj|^Update|^Refact|^Maj", group = "<!-- 6 -->🔨 Update" },
-  { message = "^doc|^Doc", group = "<!-- 3 -->📚 Documentation" },
-  { message = "^init|^Init|^first|^First", group = "<!-- 4 -->💡 Initialisation" },
-  { message = "^style|^Style", group = "<!-- 5 -->🎨 Style" },
-  { message = "^test|^Test", group = "<!-- 7 -->🧪 Testing" },
-  { message = "^chore|^Chore|^ci|^CI", group = "<!-- 8 -->⚙️ Miscellaneous Tasks (CI...)" },
-  { message = "^revert|^Revert", group = "<!-- 9 -->◀️ Revert" },
+  { message = "^feat|^Feat|^✨ Feat", group = "<!-- 0 -->🚀 Features" },
+  { message = "^fix|^Fix|^🐛 Fix", group = "<!-- 1 -->🐛 Bugs fixed" },
+  { message = "^ticket|^Ticket|^client|^Client|^🚜 Ticket", group = "<!-- 2 -->🚜 Ticket" },
+  { message = "^update|^refact|^maj|^Update|^Refact|^Maj|^🔨 Refact", group = "<!-- 6 -->🔨 Update" },
+  { message = "^doc|^Doc|^📚 Doc", group = "<!-- 3 -->📚 Documentation" },
+  { message = "^init|^Init|^first|^First|^🐣 First", group = "<!-- 4 -->💡 Initialisation" },
+  { message = "^style|^Style|^🎨 Style", group = "<!-- 5 -->🎨 Style" },
+  { message = "^test|^Test|^🧪 Test", group = "<!-- 7 -->🧪 Testing" },
+  { message = "^chore|^Chore|^ci|^CI|^🤖 CI", group = "<!-- 8 -->⚙️ Miscellaneous Tasks (CI...)" },
+  { message = "^revert|^Revert|^🔁 Revert", group = "<!-- 9 -->◀️ Revert" },
 ]
 # protect breaking changes from being skipped due to matching a skipping commit_parser
 protect_breaking_commits = false
