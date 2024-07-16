@@ -30,7 +30,7 @@
 > _using correct SFTP env based on pull requests / branches_
 - **Automatically trigger 3rd party actions** post deploy 
 > _auto clear cache using cache plugin..._
-</details
+</details>
 
 <details>
 <summary>
