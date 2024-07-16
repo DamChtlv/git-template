@@ -7,26 +7,41 @@
 > - ⌨ Commit convention / formatter: [**conventional commits**](https://www.conventionalcommits.org/en/v1.0.0/#summary) / **[husky](https://typicode.github.io/husky/)**
 
 ## ✨ Features
-### ⌨ Auto formatted commits & auto-changelog
+<details>
+<summary>
+<strong>⌨ Auto formatted commits & auto-changelog</strong>
+</summary>
+
 - This repo uses **a simple commit convention**, which gets **automatically formatted** properly and also used to **generate a changelog**  
 > 💡 INFO: Commit message should be composed like this: `action|context|details`
 >
 > Example: commit `fix ajax used wrong ajax url` will become `🐛 Fix(ajax): used wrong ajax url`,  
 > it will also be added into 🐛 **Bug fixes section** inside latest version of changelog automatically _(see `CHANGELOG.md`)_
+</details>
 
-### 🚀 Auto install / build & auto deploy / CICD 
+<details>
+<summary>
+<strong>🚀 Auto install / build & auto deploy / CICD</strong>
+</summary>
+
 - **Install assets** from managers 
 > _node modules..._
 - **Automatically push code** on remote servers 
 > _using correct SFTP env based on pull requests / branches_
 - **Automatically trigger 3rd party actions** post deploy 
 > _auto clear cache using cache plugin..._
+</details
 
-### 🔍 Project quick view (badges)
+<details>
+<summary>
+<strong>🔍 Project quick view (badges)</strong>
+</summary>
+
 - See **deploy states** per **environment** _(failed, success...)_
+</details>
 
-## 🛠 How to install and setup?
-0. Clone this repository using `https|ssh|zip`
+## 🛠 Setup
+0. Clone this repository _(using "**Use template**" or directly with `https|ssh|zip`)_
 
 1. Install **package manager**:
 > _(mandatory if `bun` is already installed)_ 
@@ -71,7 +86,7 @@ _Example:_
 ```
 
 
-## ❔ How do you use it?
+## ❔ How to use
 
 1. Install scripts
 ```sh
