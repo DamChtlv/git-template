@@ -49,15 +49,25 @@ split_commits = false
 # regex for preprocessing the commit messages
 commit_preprocessors = [
   # Replace fancy emoji commit msg by basic text
+  { pattern = '✨ Feat:', replace = "feat"},
   { pattern = '✨ Feat', replace = "feat"},
+  { pattern = '🐛 Fix:', replace = "fix"},
   { pattern = '🐛 Fix', replace = "fix"},
+  { pattern = '🚜 Ticket:', replace = "ticket"},
   { pattern = '🚜 Ticket', replace = "ticket"},
+  { pattern = '🔨 Refact:', replace = "refact"},
   { pattern = '🔨 Refact', replace = "refact"},
+  { pattern = '📚 Doc:', replace = "doc"},
   { pattern = '📚 Doc', replace = "doc"},
+  { pattern = '🐣 First:', replace = "first"},
   { pattern = '🐣 First', replace = "first"},
+  { pattern = '🎨 Style:', replace = "style"},
   { pattern = '🎨 Style', replace = "style"},
+  { pattern = '🧪 Test:', replace = "test"},
   { pattern = '🧪 Test', replace = "test"},
+  { pattern = '🤖 CI:', replace = "ci"},
   { pattern = '🤖 CI', replace = "ci"},
+  { pattern = '🔁 Revert:', replace = "revert"},
   { pattern = '🔁 Revert', replace = "revert"},
 ]
 # regex for parsing and grouping commits
