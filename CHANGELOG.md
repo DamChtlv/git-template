@@ -6,9 +6,6 @@ All notable changes to this project will be documented in this file.
 
 ### <!-- 0 -->🚀 Features
 
-- Few more words to emojis ([552f675](552f675bd7d4f621bbb5ee6fe500436a8b2408cf))
-- Only allow "bun" as manager + update package.json ([cf400ea](cf400ea101498c0cc50435f70b5f71e9527996a2))
-- Add support for Uppercase emoji commit msg ([0de16af](0de16af381b65668c80e0fb1a8cd70e86ddea8d5))
 - *(cliff)* Add "revert" & "chore" commit detection for changelog ([b041b75](b041b75ee556bbb89d7f32b30568ffcafc9a2e8e))
 
 ### <!-- 1 -->🐛 Bugs fixed
@@ -25,8 +22,6 @@ All notable changes to this project will be documented in this file.
 ### <!-- 6 -->🔨 Update
 
 - Commit emoji msg script to native git hook / husky file ([a04d4bf](a04d4bf97cd8bb3f2057bd9ea90d9e26cde07664))
-- README.md ([6099352](6099352113d0b63d22b54f21bf9284e0cce327cb))
-- README.md ([57f2f69](57f2f6973bf5253c7fad970c600debe6123e9711))
 - *(cliff)* Auto-commit generated changelog ([fca58cc](fca58cc7e1ff7f4a07a8e1c40cbda1faae7b200c))
 - *(readme)* Add details summary + rewrite titles ([b7717c0](b7717c0612373641d64a8060da745e184947a28f))
 
@@ -44,6 +39,7 @@ All notable changes to this project will be documented in this file.
 - *(husky)* Fix double dot before parenthese in commit message ([be299a9](be299a9158280bde51ee60062e3e1e831895b0d9))
 - *(.gitignore)* Add .env files ([3d7a168](3d7a168428205c8f8b7ad5c972e677a7156a660b))
 - *(cliff)* Fix commits with emoji to not show in changelog ([b9ee869](b9ee869e56e3798bbda6c4a2f0fdf1dd3fcb9d71))
+- *(cliff)* Fix commits with emoji to not show in changelog ([306f542](306f54226dc2b59a12d742c21ee366a7360b0f9d))
 
 ### <!-- 9 -->◀️ Revert
 
