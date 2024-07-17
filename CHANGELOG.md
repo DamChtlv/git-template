@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.0] - 2024-07-16
+## [0.1.0] - 2024-07-17
 
 ### <!-- 0 -->🚀 Features
 
@@ -36,6 +36,7 @@ All notable changes to this project will be documented in this file.
 - *(cliff)* Fix branch name (changelog will be in "main" branch) ([db98583](db985832a45896afedee750cc824f14d4d9d9bb2))
 - *(cliff)* Add more detected words (mostly caps versions) ([f41375f](f41375fa187b06d38d89cd4da7a4dbea8188ed46))
 - *(husky)* Fix double dot before parenthese in commit message ([be299a9](be299a9158280bde51ee60062e3e1e831895b0d9))
+- *(.gitignore)* Add .env files ([3d7a168](3d7a168428205c8f8b7ad5c972e677a7156a660b))
 
 ### <!-- 9 -->◀️ Revert
 
