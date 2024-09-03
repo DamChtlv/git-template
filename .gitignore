@@ -19,7 +19,7 @@ bun.lockb
 /wp-content/languages
 /wp-content/upgrade
 /wp-content/uploads
-/wp-content/plugins/index.php
+/wp-content/plugins/
 /wp-content/themes/index.php
 /wp-includes/
 /index.php
