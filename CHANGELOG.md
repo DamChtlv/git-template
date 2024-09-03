@@ -41,6 +41,7 @@ All notable changes to this project will be documented in this file.
 - *(cliff)* Fix commits with emoji to not show in changelog ([b9ee869](b9ee869e56e3798bbda6c4a2f0fdf1dd3fcb9d71))
 - *(cliff)* Fix commits with emoji to not show in changelog ([306f542](306f54226dc2b59a12d742c21ee366a7360b0f9d))
 - *(wp-env)* Add default .wp-env file to store project php version, plugins...etc ([7172580](717258014d4658d48150b4f04519b8c40f0b82b0))
+- *(gitignore)* Remove all plugins ([f643301](f643301fc31cb7b673db331b68ececee82f8f2b4))
 
 ### <!-- 9 -->◀️ Revert
 
