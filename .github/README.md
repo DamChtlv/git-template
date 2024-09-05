@@ -51,12 +51,12 @@
 ## 🛠 Setup
 0. Clone this repository _(using "**Use template**" or directly with `https|ssh|zip`)_
 
-1. Install **package manager** _(mandatory if `bun` is already installed)_ 
+1. Install **package manager** _(optional if `bun` is already installed)_ 
 ```sh
 curl -fsSL https://bun.sh/install | bash
 ```
 
-2. Install **git hooks manager** _(mandatory if `package.json` already has `prepare` script)_
+2. Install **git hooks manager** _(optional if `package.json` already has `prepare` script)_
 ```sh
 bunx husky install
 ```
