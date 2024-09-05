@@ -21,42 +21,47 @@
 
 <details>
 <summary>
-<strong>🚀 Auto install / build & auto deploy / CICD</strong>
+<strong>🚀 Auto install, build & deploy with CI/CD</strong> <em>(based on branches)</em>
 </summary>
 
-- **Install assets** from managers 
-> _node modules..._
-- **Automatically push code** on remote servers 
-> _using correct SFTP env based on pull requests / branches_
-- **Automatically trigger 3rd party actions** post deploy 
-> _auto clear cache using cache plugin..._
+- **Automatically install assets** _(from managers like node modules... using bun action)_
+- **Automatically push code** on remote servers _(using correct SFTP env based on pull requests / branches)_
+- **Automatically configure IP whitelisting** on hosting _(specific to o2switch hosting)_
+- **Automatically trigger 3rd party actions** post deploy _(auto clear cache...)_
 </details>
 
 <details>
 <summary>
-<strong>🔍 Project quick view (badges)</strong>
+<strong>🔍 Project quick view</strong> <em>(badges)</em>
 </summary>
 
 - See **deploy states** per **environment** _(failed, success...)_
 </details>
 
+<details>
+<summary>
+<strong>🎢 Quick launch a WP server</strong> <em>(docker is mandatory)</em>
+</summary>
+
+- Update content of `.wp-env.json` with your preferences _(php version, theme, plugins...)_
+- Use `wp-env` scripts like: `bun run wp:start` / `bun run wp:stop`
+- More informations about [**wp-env** here](https://github.com/WordPress/gutenberg/tree/HEAD/packages/env#readme)
+</details>
+
 ## 🛠 Setup
 0. Clone this repository _(using "**Use template**" or directly with `https|ssh|zip`)_
 
-1. Install **package manager**:
-> _(mandatory if `bun` is already installed)_ 
+1. Install **package manager** _(mandatory if `bun` is already installed)_ 
 ```sh
 curl -fsSL https://bun.sh/install | bash
 ```
 
-2. Install **git hooks manager**:
-> _(mandatory if `package.json` already has `prepare` script)_ 
+2. Install **git hooks manager** _(mandatory if `package.json` already has `prepare` script)_
 ```sh
 bunx husky install
 ```
 
-3. Update **continuous integration config files:**
-> _(Github readme, actions...)_
+3. Update **continuous integration config files** _(Github readme, actions...)_
 - Edit **deployment files paths** located in:
   - `.github/workflows/deploy-preprod.yml`
   - `.github/workflows/deploy-prod.yml`
@@ -98,22 +103,17 @@ bun i
 bun run script-name
 ```
 
-3. Execute package
-```sh
-bunx module-name
-```
-
-4. Build assets
+3. Build assets
 ```sh
 bun run build ./index.js --outdir ./build
 ```
 
-5. Spin up a static server on `localhost:5000`
+4. Spin up a static server on `localhost:5000`
 ```sh
 bunx serve folder-name
 ```
 
-6. Run tests
+5. Run tests
 ```sh
 bun test
 ```
