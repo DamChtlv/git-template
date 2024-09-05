@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file.
 
 - *(readme)* Update libs + explanations ([1c089c3](1c089c3d5b5fcfae033a0e1837e0bc8e1e7a1e0d))
 - *(readme)* Add wp-env infos + reformat titles ([e812544](e8125446a5ed80becb44d36efbddcf21d0f27ba9))
+- *(readme)* Fix typos ([7f0ffa8](7f0ffa87de2e2f6430f9b19db0434ac10991bd8c))
 
 ### <!-- 6 -->🔨 Update
 
