@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file.\n
 body = """
 {% if version %}\
     {% if previous.version %}\
-        ## [{{ version | trim_start_matches(pat="v") }}]({{ repository }}/compare/{{ previous.version }}...{{ version }}) - {{ timestamp | date(format="%d-%m-%Y") }}
+        ## [{{ version | trim_start_matches(pat="v") }}](<REPO>/compare/{{ previous.version }}...{{ version }}) - {{ timestamp | date(format="%d-%m-%Y") }}
     {% else %}\
         ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%d-%m-%Y") }}
     {% endif %}\
@@ -28,7 +28,7 @@ body = """
     {% for commit in commits %}
         - {% if commit.scope %}*({{ commit.scope }})* {% endif %}\
             {% if commit.breaking %}[**⚠️ CHANGE**] {% endif %}\
-            {{ commit.message | upper_first }} ([{{ commit.id | truncate(length=7, end="") }}]({{ repository }}/commit/{{ commit.id }}))\
+            {{ commit.message | upper_first }} ([{{ commit.id | truncate(length=7, end="") }}](<REPO>/commit/{{ commit.id }}))\
     {% endfor %}
 {% endfor %}\n
 """
