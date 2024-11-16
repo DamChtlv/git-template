@@ -56,6 +56,10 @@ replacements=(
     's/^del/❌ Del:/'
     's/^revert/🔁 Revert:/'
     's/^Revert/🔁 Revert:/'
+    's/^hotfix/🚨 Hotfix:/'
+    's/^Hotfix/🚨 Hotfix:/'
+    's/^hot/🚨 Hotfix:/'
+    's/^Hot/🚨 Hotfix:/'
 )
 
 # join replacements by ; to have sed perform multiple replace
