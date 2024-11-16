@@ -15,7 +15,11 @@ All notable changes to this project will be documented in this file.\n
 # https://keats.github.io/tera/docs/#introduction
 body = """
 {% if version %}\
-    ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+    {% if previous.version %}\
+        ## [{{ version | trim_start_matches(pat="v") }}]({{ repository }}/compare/{{ previous.version }}...{{ version }}) - {{ timestamp | date(format="%d-%m-%Y") }}
+    {% else %}\
+        ## [{{ version | trim_start_matches(pat="v") }}] - {{ timestamp | date(format="%d-%m-%Y") }}
+    {% endif %}\
 {% else %}\
     ## [unreleased]
 {% endif %}\
@@ -24,7 +28,7 @@ body = """
     {% for commit in commits %}
         - {% if commit.scope %}*({{ commit.scope }})* {% endif %}\
             {% if commit.breaking %}[**⚠️ CHANGE**] {% endif %}\
-            {{ commit.message | upper_first }} ([{{ commit.id | truncate(length=7, end="") }}]({{ commit.id }}))\
+            {{ commit.message | upper_first }} ([{{ commit.id | truncate(length=7, end="") }}]({{ repository }}/commit/{{ commit.id }}))\
     {% endfor %}
 {% endfor %}\n
 """
@@ -69,11 +73,13 @@ commit_preprocessors = [
   { pattern = '🤖 CI', replace = "ci"},
   { pattern = '🔁 Revert:', replace = "revert"},
   { pattern = '🔁 Revert', replace = "revert"},
+  { pattern = '🚨 Hotfix:', replace = "hot"},
+  { pattern = '🚨 Hotfix', replace = "hotfix"},
 ]
 # regex for parsing and grouping commits
 commit_parsers = [
   { message = "^feat|^Feat|^✨ Feat", group = "<!-- 0 -->🚀 Features" },
-  { message = "^fix|^Fix|^🐛 Fix", group = "<!-- 1 -->🐛 Bugs fixed" },
+  { message = "^fix|^Fix|^🐛 Fix|^hot|^Hot|^Hotfix|^🚨 Hotfix", group = "<!-- 1 -->🐛 Bugs fixed" },
   { message = "^ticket|^Ticket|^client|^Client|^🚜 Ticket", group = "<!-- 2 -->🚜 Ticket" },
   { message = "^update|^refact|^maj|^Update|^Refact|^Maj|^🔨 Refact", group = "<!-- 6 -->🔨 Update" },
   { message = "^doc|^Doc|^📚 Doc", group = "<!-- 3 -->📚 Documentation" },
