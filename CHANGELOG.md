@@ -48,6 +48,7 @@ All notable changes to this project will be documented in this file.
 - *(cliff)* Add version compare support + hotfix support + fix commit links ([56f6d1e](https://github.com/DamChtlv/git-template/commit/56f6d1e3f590169d528492b3d799cb681ce27e47))
 - *(cliff)* Attempt to fix repo link in commit links ([98baddc](https://github.com/DamChtlv/git-template/commit/98baddce41bb1aee3fe7be0662309ba88d6b4612))
 - *(cliff)* Attempt to fix repo link in commit links ([117285e](https://github.com/DamChtlv/git-template/commit/117285e79215c80af91d76a09b991301c9d4fa42))
+- *(husky)* Add support for clean, format, del and rename ([ca62afd](https://github.com/DamChtlv/git-template/commit/ca62afd5ea4e3e061b3ba1f90daaec4d9f8c18e7))
 
 ### <!-- 9 -->◀️ Revert
 
