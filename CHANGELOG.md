@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.0] - 16-11-2024
+## [0.1.0] - 25-11-2024
 
 ### <!-- 0 -->🚀 Features
 
@@ -51,6 +51,7 @@ All notable changes to this project will be documented in this file.
 - *(husky)* Add support for clean, format, del and rename ([ca62afd](https://github.com/DamChtlv/git-template/commit/ca62afd5ea4e3e061b3ba1f90daaec4d9f8c18e7))
 - *(husky)* Add support for hotfix ([31c59e3](https://github.com/DamChtlv/git-template/commit/31c59e3fbb74211d68f9bd2309102ce06bae23f7))
 - *(.editorconfig)* Add editor config file for code readibility ([c32ea02](https://github.com/DamChtlv/git-template/commit/c32ea02a6542583886d30a9310592df0d86cfb4f))
+- *(deploy)* Update script ([128b4d6](https://github.com/DamChtlv/git-template/commit/128b4d6fd4e0dd9ddc097f545ed453de9cbc02d2))
 
 ### <!-- 9 -->◀️ Revert
 
